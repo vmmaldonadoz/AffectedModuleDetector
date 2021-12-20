@@ -15,6 +15,7 @@ class AffectedTestsPlugin : Plugin<Project> {
         // Only allow unit tests to run if the AffectedModuleDetector says to include them
         target.tasks.withType(Test::class.java) { task ->
             AffectedModuleDetector.configureTaskGuard(task)
+            AffectedModuleDetector.configureTaskGuard()
         }
     }
 }
